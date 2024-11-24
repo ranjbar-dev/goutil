@@ -78,6 +78,12 @@ func main() {
 
 	// create window
 	window := app.NewWindow(Title)
+	icon, err := fyne.LoadResourceFromPath("C:/Users/root/Desktop/hub projects/goutil/assets/icon.png")
+	if err != nil {
+		fyne.LogError("Failed to load icon", err)
+	} else {
+		window.SetIcon(icon)
+	}
 
 	// set window size
 	window.Resize(fyne.NewSize(Width, Height))
